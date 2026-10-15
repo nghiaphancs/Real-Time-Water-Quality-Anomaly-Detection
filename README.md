@@ -1,4 +1,5 @@
 ﻿# Real-Time Water Quality Anomaly Detection & Monitoring System
+
 ### Hệ thống Giám sát & Phát hiện Bất thường Chất lượng Nước Thời gian Thực
 
 <p align="center">
@@ -71,11 +72,13 @@ Real-Time-Water-Quality-Anomaly-Detection/
 ## 3. Quick Start
 
 ### Prerequisites
+
 - **Python 3.10+** (in a virtual environment `.venv`)
 - **Node.js 18+ & npm 10+**
 - **Mosquitto MQTT Broker** (ports 1883 and 9001) or Docker
 
 ### Installation & Execution
+
 ```bash
 # 1. Setup Python Virtual Environment
 python -m venv .venv
@@ -90,10 +93,12 @@ make run
 ```
 
 ### Accessing the Web Dashboard
+
 - **Web Dashboard & API:** [http://127.0.0.1:8000](http://127.0.0.1:8000)
 - **Vite Dev Server (Frontend Development):** [http://127.0.0.1:5173](http://127.0.0.1:5173)
 
 ### Service Management
+
 ```bash
 ./scripts/status.sh   # Check service and port status
 ./stop.sh             # Gracefully stop the system
@@ -129,6 +134,7 @@ The system supports seamless hot-switching between data sources:
 ## 6. Automated Testing
 
 Run the pytest suite covering all components (Normalizer, CSV Source, Detectors, Storage, WQI):
+
 ```bash
 make test
 # or:
@@ -213,12 +219,15 @@ Real-Time-Water-Quality-Anomaly-Detection/
 ## 3. Khởi động Nhanh
 
 ### Yêu cầu môi trường
+
 - **Python 3.10+** (đã tạo virtual environment tại `.venv`)
 - **Node.js 18+ & npm 10+**
 - **Mosquitto MQTT Broker** (lắng nghe cổng 1883 và WebSockets 9001) hoặc Docker
 
 ### Lệnh chạy
+
 Chỉ cần thực hiện 1 lệnh:
+
 ```bash
 ./start.sh
 # hoặc:
@@ -226,10 +235,12 @@ make run
 ```
 
 ### Truy cập Giao diện & API
+
 - **Web Dashboard & API:** [http://127.0.0.1:8000](http://127.0.0.1:8000)
 - **Vite Dev Server (khi phát triển UI):** [http://127.0.0.1:5173](http://127.0.0.1:5173)
 
 ### Kiểm tra trạng thái & Dừng
+
 ```bash
 ./scripts/status.sh   # Kiểm tra trạng thái dịch vụ và cổng mạng
 ./stop.sh             # Dừng hệ thống an toàn
@@ -242,13 +253,17 @@ make run
 Hệ thống cho phép chuyển đổi nóng nguồn cấp số liệu mà không cần khởi động lại:
 
 ### Cách 1: Chuyển đổi qua Giao diện Web
+
 Vào tab **Cài đặt & Cấu hình (Settings)** trên Dashboard:
+
 1. **CSV (Giả lập):** Chọn tệp CSV từ dropdown trong thư mục `data/datasets/`, chọn thứ tự phát (`sequential` từ trên xuống hoặc `random`).
 2. **Thiết bị IoT:** Tiếp nhận trực tiếp số liệu từ Raspberry Pi / vi điều khiển.
 3. **Tự động (Auto):** Ưu tiên thiết bị khi có kết nối; tự động chuyển sang phát lại CSV nếu mất tín hiệu quá 30 giây.
 
 ### Cách 2: Kết nối Thiết bị Thật (Raspberry Pi)
+
 Thiết bị có thể gửi dữ liệu qua bất kỳ giao thức nào trong 3 giao thức sau:
+
 1. **MQTT:** Gửi gói tin JSON tới topic `devices/<device_id>/telemetry`.
 2. **HTTP REST:** Gửi HTTP POST tới `http://127.0.0.1:8000/api/v1/ingest`.
 3. **Serial USB:** Cắm cổng `/dev/ttyUSB0` gửi mỗi dòng 1 chuỗi JSON hoặc định dạng `pH,DO,turbidity,EC,temperature`.
@@ -260,9 +275,11 @@ Chi tiết mẫu lệnh xem tại [`devices/README.md`](devices/README.md).
 ## 5. Tích hợp Mô hình AI (ONNX)
 
 Hệ thống đã có sẵn khung `OnnxDetector` và kiểm tra hợp đồng dữ liệu tensor:
+
 1. Thả tệp mô hình `.onnx` vào thư mục [`data/models/`](data/models/).
 2. Tạo tệp `model.yaml` mô tả cấu trúc tensor đầu vào/đầu ra (mẫu tại `data/models/model.yaml`).
 3. Chuyển đổi mô hình trực tiếp trên Web UI hoặc gửi API:
+
 ```bash
 curl -X POST http://127.0.0.1:8000/api/v1/config \
   -H "Content-Type: application/json" \
@@ -274,6 +291,7 @@ curl -X POST http://127.0.0.1:8000/api/v1/config \
 ## 6. Kiểm thử Tự động (Tests)
 
 Chạy bộ kiểm thử tự động với 13 bài test (Normalizer, CSV Source, Detector, Database, WQI Calculation):
+
 ```bash
 make test
 # hoặc:
