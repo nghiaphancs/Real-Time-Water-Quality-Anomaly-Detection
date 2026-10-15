@@ -1,0 +1,21 @@
+# Cấu hình Rpi Agent trên Raspberry Pi
+device_id: "rpi_station_01"
+interval_sec: 6.0
+transport: "mqtt"    # mqtt | http | serial
+
+mqtt:
+  broker: "127.0.0.1"
+  port: 1883
+  topic: "devices/rpi_station_01/telemetry"
+
+http:
+  endpoint: "http://127.0.0.1:8000/api/v1/ingest"
+
+serial:
+  port: "/dev/ttyUSB0"
+  baudrate: 9600
+
+meta:
+  station: "RaspberryPi_Lab"
+  city: "HoChiMinh"
+  province: "HCM"

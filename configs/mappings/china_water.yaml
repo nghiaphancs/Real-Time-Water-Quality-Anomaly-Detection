@@ -1,0 +1,18 @@
+mapping_name: "china_water"
+description: "Ánh xạ cột cho bộ dữ liệu China Water Pollution Monitoring Dataset"
+
+fields:
+  pH: "pH"
+  DO: "Dissolved_Oxygen_mg_L"
+  turbidity: "Turbidity_NTU"
+  EC: "Conductivity_uS_cm"
+  temperature: "Water_Temperature_C"
+
+meta:
+  timestamp: "Date"
+  station: "Monitoring_Station"
+  city: "City"
+  province: "Province"
+  wqi: "Water_Quality_Index"
+  pollution_level: "Pollution_Level"
+  remarks: "Remarks"

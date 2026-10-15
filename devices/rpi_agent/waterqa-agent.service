@@ -1,0 +1,14 @@
+[Unit]
+Description=WaterQA Raspberry Pi Telemetry Agent
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/rpi_agent
+ExecStart=/usr/bin/python3 agent.py agent.yaml
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,11 @@
+# Mosquitto Broker LAN / Scale Configuration Example
+# Sử dụng khi cần kết nối Raspberry Pi hoặc thiết bị thực tế qua mạng LAN
+
+# listener 1883 0.0.0.0
+# allow_anonymous false
+# password_file /etc/mosquitto/passwd
+# acl_file /etc/mosquitto/acl
+
+# listener 9001 0.0.0.0
+# protocol websockets
+# allow_anonymous false

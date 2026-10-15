@@ -1,0 +1,56 @@
+features:
+  pH:
+    key: "pH"
+    name: "pH Level"
+    name_vi: "Độ kiềm/axit (pH)"
+    unit: "pH"
+    min: 5.34
+    max: 8.76
+    safe_min: 6.5
+    safe_max: 8.5
+    color: "#00A89D"
+    description: "Chỉ số đo tính axit hoặc bazơ của nước. Nước uống và sinh hoạt an toàn trong khoảng 6.5 - 8.5."
+  DO:
+    key: "DO"
+    name: "Dissolved Oxygen"
+    name_vi: "Oxy hòa tan (DO)"
+    unit: "mg/L"
+    min: 1.47
+    max: 14.49
+    safe_min: 5.0
+    safe_max: 12.0
+    color: "#0284C7"
+    description: "Lượng dưỡng khí oxy hòa tan cần thiết cho hệ sinh thái thủy sinh và quá trình tự làm sạch nguồn nước."
+  turbidity:
+    key: "turbidity"
+    name: "Turbidity"
+    name_vi: "Độ đục"
+    unit: "NTU"
+    min: 0.0
+    max: 47.48
+    safe_min: 0.0
+    safe_max: 5.0
+    color: "#F59E0B"
+    description: "Độ vẩn đục do chất rắn lơ lửng trong nước. Độ đục cao làm giảm chất lượng nước và che chở vi sinh vật."
+  EC:
+    key: "EC"
+    name: "Conductivity"
+    name_vi: "Độ dẫn điện (EC)"
+    unit: "µS/cm"
+    min: 136.85
+    max: 842.89
+    safe_min: 200.0
+    safe_max: 800.0
+    color: "#8B5CF6"
+    description: "Khả năng dẫn điện thể hiện tổng lượng ion khoáng hòa tan (TDS) trong khối nước."
+  temperature:
+    key: "temperature"
+    name: "Water Temperature"
+    name_vi: "Nhiệt độ nước"
+    unit: "°C"
+    min: 3.39
+    max: 36.77
+    safe_min: 15.0
+    safe_max: 30.0
+    color: "#EC4899"
+    description: "Nhiệt độ môi trường nước tại trạm đo quan trắc. Ảnh hưởng trực tiếp đến khả năng hòa tan oxy."

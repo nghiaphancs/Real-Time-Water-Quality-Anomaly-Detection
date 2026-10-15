@@ -1,25 +1,44 @@
-# Dependencies
-node_modules/
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-env/
+﻿# Python Virtual Environments
+.venv/
 venv/
+env/
 ENV/
-.env
+.Python
 
-# Build outputs
-dist/
-build/
-*.egg-info/
+# Python Cache
+__pycache__/
+*.py[cod]
+*.class
+*.so
+.pytest_cache/
 
-# Local databases & logs
+# Runtime and Database
+data/runtime/
 *.db
+*.db-wal
+*.db-shm
 *.sqlite3
+
+# Node / Frontend / Dashboard
+node_modules/
+dashboard/node_modules/
+dashboard/dist/
+dashboard/.tmp/
+frontend/node_modules/
+frontend/dist/
+
+# Logs & PIDs
+logs/
+data/logs/*.csv
+!data/logs/archive/
+*.log
+*.pid
 mosquitto/data/
 mosquitto/log/
+
+# Environment variables
+.env
+.env.local
 
 # IDE & OS files
 .vscode/

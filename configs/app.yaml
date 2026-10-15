@@ -1,0 +1,52 @@
+app:
+  name: Edge Water QA
+  version: 2.0.0
+  env: local
+source:
+  mode: csv
+  csv:
+    file: china_water_pollution_data.csv
+    mapping: china_water
+    order: sequential
+    loop: true
+    interval_sec: 6.0
+    station: null
+    skip_invalid: true
+  device:
+    timeout_sec: 30.0
+    telemetry_topic: devices/+/telemetry
+    status_topic: devices/+/status
+detector:
+  type: rule_based
+  threshold: 0.4
+  window_size: 30
+  warmup_samples: 5
+  onnx:
+    model_file: data/models/anomaly.onnx
+    metadata_file: data/models/model.yaml
+    intra_op_threads: 2
+mqtt:
+  broker: 127.0.0.1
+  port: 1883
+  ws_port: 9001
+  keepalive: 60
+  topics:
+    raw_telemetry: water_quality
+    result: water_quality/result
+    control: edge/control
+api:
+  host: 127.0.0.1
+  port: 8000
+  cors_origins:
+  - http://localhost:5173
+  - http://127.0.0.1:5173
+  - http://localhost:8000
+  - http://127.0.0.1:8000
+storage:
+  db_path: data/runtime/waterqa.db
+  csv_log: data/logs/benchmark_log.csv
+  schema_version: '2.0'
+  retention_days: 30
+security:
+  enabled: false
+  api_key: ''

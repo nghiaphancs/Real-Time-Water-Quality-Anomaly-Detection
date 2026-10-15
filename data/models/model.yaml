@@ -1,0 +1,20 @@
+model_name: WaterQualityAutoencoder
+version: 1.0.0
+format: onnx
+input_name: sensor_window
+input_shape:
+- 1
+- 30
+- 5
+feature_order:
+- pH
+- DO
+- turbidity
+- EC
+- temperature
+dtype: float32
+output_name: reconstructed_window
+output_type: reconstruction
+threshold: 0.35
+description: "M\u1EABu si\xEAu d\u1EEF li\u1EC7u h\u1EE3p \u0111\u1ED3ng I/O cho m\xF4\
+  \ h\xECnh Autoencoder ONNX"
